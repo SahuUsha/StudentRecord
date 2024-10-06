@@ -112,6 +112,7 @@ const handleEditRecord=async(getCurrentStudent)=>{
         {
             studentList && studentList.length>0?
             studentList.map((item)=>
+        
                 <Card className="p-5">
             <CardContent>
              <CardTitle className="p-3 mb-3">Name : {item.name}</CardTitle>
