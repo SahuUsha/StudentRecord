@@ -8,9 +8,9 @@ const connectToDb=async()=>{
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        console.log('Student database connection is successful');
+        console.log("Student database connection is successful");
     } catch (error) {
-        console.error('Error connecting to the database:', error);
+        console.error("Error connecting to the database:", error);
     }
 }
 
