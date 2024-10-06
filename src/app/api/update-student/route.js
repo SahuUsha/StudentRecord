@@ -1,7 +1,7 @@
 import connectToDb from "@/app/database/page";
 import Student from "@/app/models/page";
 import { NextResponse } from "next/server";
-import Joi from 'joi';
+import Joi from "joi";
 
 const EditStudent= Joi.object({
     name : Joi.string().required(),
@@ -12,9 +12,9 @@ const EditStudent= Joi.object({
         .length(10)            
         .required()
         .messages({
-            'string.pattern.base': 'Contact number must contain only digits.',
-            'string.length': 'Contact number must be exactly 10 digits.',
-            'any.required': 'Contact number is required.'
+            "string.pattern.base": "Contact number must contain only digits.",
+            "string.length": "Contact number must be exactly 10 digits.",
+            "any.required": "Contact number is required."
         }),
 })
 
@@ -24,12 +24,12 @@ export async function PUT(request) {
     await connectToDb();
     
     const {searchParams} = new URL(request.url)
-    const getCurrentStudentID = searchParams.get('id');
+    const getCurrentStudentID = searchParams.get("id");
 
     if(!getCurrentStudentID){
         return NextResponse.json({
             success : false,
-            message : 'Student ID is required'
+            message : "Student ID is required"
         })
     }
 
@@ -58,7 +58,7 @@ export async function PUT(request) {
     }else{
         return NextResponse.json({
             success : false,
-            message : 'Something went wrong ! Please try again'
+            message : "Something went wrong ! Please try again"
         })
        }
 
@@ -66,7 +66,7 @@ export async function PUT(request) {
     console.log(e)
     return NextResponse.json({
         success : false,
-        message : 'Something went Wrong ! Please try again'
+        message : "Something went Wrong ! Please try again"
     })
    }
 }
