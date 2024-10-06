@@ -8,12 +8,12 @@ export async function DELETE(req) {
 
      await connectToDb();
      const {searchParams} = new URL(req.url);
-     const getCurrentStudentID = searchParams.get('id');
+     const getCurrentStudentID = searchParams.get("id");
      console.log(getCurrentStudentID)
         if(!getCurrentStudentID){
             return NextResponse.json({
                 success : false,
-                message : 'Student ID is Required'
+                message : "Student ID is Required"
             })
         }
 
@@ -21,12 +21,12 @@ export async function DELETE(req) {
         if(deleteCurrentStudentById){
             return  NextResponse.json({
                 success : true,
-                message : 'Student is deleted successfully'
+                message : "Student is deleted successfully"
             })
         }else{
             return NextResponse.json({
                 success : false,
-                message : 'Something went wrong ! please try again'
+                message : "Something went wrong ! please try again"
               })
         }
     }
@@ -34,7 +34,7 @@ export async function DELETE(req) {
         console.log(e);
         return NextResponse.json({
          success : false,
-         message : 'Something went wrong ! please try again'
+         message : "Something went wrong ! please try again"
         });
  
     }
