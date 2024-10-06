@@ -1,7 +1,7 @@
 "use client"
 
-import {useState} from 'react'
-import { Button } from '@/components/ui/button'
+import {useState} from "react"
+import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogContent,
@@ -21,7 +21,7 @@ const AddNewStudent = ({
 
     return(
         <div>
-        <div className='p-8'>
+        <div className="p-8">
             <Button className="cursor-pointer text-white text-xl bg-slate-800  text-[1.3rem] px-11 py-7 rounded-lg" onClick={()=>setopenStudentDialog(true)} >Add Student Record</Button>
         </div>
         <Dialog  
@@ -109,13 +109,13 @@ const AddNewStudent = ({
                  })}
               />
             </div>
-              <p className='text-red-500'>Contact No. should be 10-digit otherwise it won't save</p>
+              <p className="text-red-500">Contact No. should be 10-digit otherwise it will not save</p>
          </div>
          <DialogFooter>
           <Button onClick={handleSaveStudentRecord} type="button" className="cursor-pointer px-8 py-5 text-[1rem] text-white text-xl bg-slate-800 ">
             {
 
-                loading? 'Saving changes' : 'Save changes'
+                loading? "Saving changes" : "Save changes"
                 
             }
             </Button>
