@@ -1,7 +1,7 @@
 "use client"
 
-import React from 'react'
-import ShowStudentRecord from '../components2/recordShow/page';
+import React from "react"
+import ShowStudentRecord from "../components2/recordShow/page";
 
 const fetchListOfData=async()=>{
     try{
