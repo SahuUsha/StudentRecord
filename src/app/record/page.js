@@ -1,14 +1,15 @@
+"use client"
 
-
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ShowStudentRecord from '../components2/recordShow/page';
+import { useSearchParams } from 'next/navigation';
 
-export const revalidate = 0;
+// export const revalidate = 0;
 
 const fetchListOfData=async()=>{
     try{
       
-        const apiResponse = await fetch("http://localhost:3000/api/get-student",{
+        const apiResponse = await fetch("/api/get-student",{
             method : "GET",
             cache : "no-store",
         })
@@ -19,13 +20,21 @@ const fetchListOfData=async()=>{
         throw new Error(error)
     }
 }
-const Student=async()=>{
-    const studentList = await fetchListOfData();
+const Student=()=>{
+    const [studentList, setStudentList] = useState();
+    useEffect(() => {
+        fetchListOfData().then((data) => {
+            // console.log(data);
+            setStudentList(data);
+        });
+    }, [])
     console.log(studentList,"studentList");
     return(
         <ShowStudentRecord studentList={studentList}/>
     )
 }
+
+
 
 export default Student;
 
