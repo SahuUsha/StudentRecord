@@ -112,7 +112,7 @@ const handleEditRecord=async(getCurrentStudent)=>{
         {
             studentList && studentList.length>0?
             studentList.map((item)=>
-                <Card className="p-5">
+                <Card className="p-5" key={item._id}>
             <CardContent>
              <CardTitle className="p-3 mb-3">Name : {item.name}</CardTitle>
              <CardTitle className="p-3 mb-3">Branch : {item.branch}</CardTitle>

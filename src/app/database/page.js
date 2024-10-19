@@ -5,8 +5,8 @@ const connectToDb=async()=>{
 
     try {
         await mongoose.connect(url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true,
         });
         console.log('Student database connection is successful');
     } catch (error) {
@@ -14,4 +14,4 @@ const connectToDb=async()=>{
     }
 }
 
-export default connectToDb;
+export default connectToDb; 
